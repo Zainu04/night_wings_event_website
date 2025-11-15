@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- head
+
+        Purpose:
+        - Title used here shows up in the browser tab
+        - Link to the favicon (small image that appears in the browser tab)
+        - Link to the CSS file (used to style the webpage)
+
+        When To Modify:
+        - [ ] Project 2 (REQUIRED FEATURE) 
+        - [ ] Project 2 (STRETCH FEATURE) (favicon)
+        - [ ] Any time after
+        -->
+        <link rel="stylesheet" href="styles.css">
+        <title>Night Wing's</title>
+        <link rel="icon" href="img/favicon.ico">
+
+    </head>
+  
+
+    <body>
+    
+        <!-- navbar
+
+Purpose:
+- Navigation bar that allows users to jump to different sections of the webpage
+- Also holds buttons for user settings (dark mode, reduce motion)
+
+When To Modify:
+- [ ] Project 4 (REQUIRED FEATURE)
+- [ ] Project 5 (REQUIRED FEATURE) 
+- [ ] Project 8 (STRETCH FEATURE) 
+- [ ] Any time between / after
+-->
+<div class="navbar">
+    <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#links">Links</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><button id="theme-button">Toggle Dark Mode</button></li>
+    </ul>
+</div>
+
+
+        <!-- headings
+
+        Purpose:
+        - Main header section of the webpage
+        - Contains the title, subtitle, image, and key buttons for the webpage
+
+        When To Modify:
+        - [ ] Project 2 (REQUIRED FEATURE) 
+        - [ ] Project 3 (REQUIRED FEATURE) 
+        - [ ] Project 4 (REQUIRED FEATURE) 
+        - [ ] Any time after
+        -->
+   <div class="header-container">
+    <div class="header-item">
+        <img id="header-img" src="img/12063F5C-D455-4E2D-A495-C5B7046A1837.PNG" alt="Night Wings Logo">
+        <h1>Night Wing's</h1>
+        <h3 class="quote">Ideas in motion, moments in memory.</h3>
+    </div>
+    <div class="header-item">
+        <button class="header-button" type="button">Get Tickets</button>
+        <button class="header-button" type="button">View Schedule</button>
+    </div>
+</div>
+
+        
+        <!-- about
+
+        Purpose:
+        - Section for general info about the event
+        - Contains a video, description, and key points about the event
+
+        When To Modify:
+        - [ ] Project 2 (REQUIRED FEATURE) 
+        - [ ] Project 2 (STRETCH FEATURE) 
+        - [ ] Project 4 (STRETCH FEATURE) 
+        - [ ] Any time between / after
+        --> 
+        
+
+        <h2 id="about">About the Event</h2>
+        <p>Night Wings is a nighttime aviation photography event where passionate individuals gather under the starry night sky to capture stunning images of airplanes. 
+        The event takes place at an airport and includes helpful tips for nighttime photography, opportunities to connect with other enthusiasts, and a chance to share stories and photos. 
+        Guests are encouraged to bring their own equipment, such as zoom lenses and tripods, to enjoy the creative and calm atmosphere filled with the sounds and sights of airplanes.</p>
+
+        <h3>What to Expect</h3>
+        <h4 class="important">Highlights of Night Wings</h4>
+        <ul>
+            <li><b>Photography Tips:</b> <i>Learn techniques for capturing airplanes at night with guidance from experts.</i></li>
+            <li><b>Community:</b> <i>Connect with fellow aviation and photography enthusiasts to share ideas and experiences.</i></li>
+            <li><b>Creative Atmosphere:</b> <i>Enjoy the calm, inspiring environment while capturing beautiful nighttime shots.</i></li>
+        </ul>
+
+
+        <!-- schedule
+
+        Purpose:
+        - Section for specific info about the event's schedule
+        - Contains images and descriptions of each activity
+
+        When To Modify:
+        - [ ] Project 2 (REQUIRED FEATURE) 
+        - [ ] Project 4 (STRETCH FEATURE) 
+        - [ ] Any time between / after
+        --> 
+        <h2 id="schedule">Event Schedule</h2>
+
+        <img class="event-img" alt="Airplane being photographed at night" src="./img/PL6_3305-large.png" height="300" width="400"/>~
+        <h3>Capturing the Moment</h3>
+        <p>Photographers line the runway, cameras poised and anticipation buzzing in the cool night air. Everyone shares the same excitement—ready to capture the perfect shot as the airplanes take center stage.</p>
+            
+        <img class="event-img" alt="Aircraft flying" src="img/istockphoto-1163548982-612x612.jpg" height="300" width="400"/>
+        <h3>Interactive Aircraft Displays</h3>
+        <p>Attendees explore static aircraft exhibits, stepping inside cockpits, examining instruments, and learning about aviation technology. Experts are on hand to answer questions, making it a hands-on experience for aviation enthusiasts of all ages."</p>
+
+        <img class="event-img" alt="Plane on runway" src="img/istockphoto-696113780-612x612.jpg" height="300" width="400"/>
+        <h3>Night Flight Demonstrations</h3>
+        <p>Under the night sky, pilots perform dazzling maneuvers and takeoffs. The crowd watches in awe as lights trace their path across the runway, blending the thrill of flight with the beauty of nighttime aviation."</p>
+
+        <h2 id="contact">Contact</h2>
+        <p>If you have questions or want to connect, reach out to us via email at info@nightwings.com.</p>
+
+        <!-- rsvp
+
+Purpose:
+- Section for users to sign up for the event
+- Contains a form for users to input their information, 
+and a list of other users who have signed up
+
+When To Modify:
+- [ ] Project 6 (REQUIRED FEATURE) 
+- [ ] Project 6 (STRETCH FEATURE) 
+- [ ] Any time after
+--> 
+<div id="rsvp">
+    <h2>RSVP</h2>
+    <p id="rsvp-count">⭐ 3 people have RSVP'd to this event!</p>
+    <div class="rsvp-container">
+        <div class="rsvp-para">
+            <p>Join Night Wings! Sign up now to get updates about the event and be part of our aviation photography community.</p>
+        </div>
+        <div class="rsvp-participants">
+            <p>🎟️ Alex from Florida has RSVP'd.</p>
+            <p>🎟️ Jamie from California has RSVP'd.</p>
+            <p>🎟️ Sam from New York has RSVP'd.</p>
+        </div>
+    </div>
+
+    <!--- Sign RSVP Form --->
+    <div class="form-container">
+        <form id="rsvp-form" title="rsvp-form">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enrer your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" placeholder="Enter your state" required>
+            <button id="rsvp-button">Submit RSVP</button>
+        </form>
+
+    </div>      
+</div>
+
+        <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
+
+        <!-- links
+
+        Purpose:
+       <-- Links to other resources related to the event-->
+
+      <!--When To Modify:
+        - [ ] Project 2 (STRETCH FEATURE) 
+        - [ ] Project 4 (STRETCH FEATURE) 
+        - [ ] Any time between / after--> 
+
+        <h2 id="links">Links</h2>
+
+        <!-- This <a> block is one link.  Copy and paste all 6 lines to create another link. -->
+    
+
+        <h3><a href="https://www.capturelandscapes.com/beginners-guide-to-night-photography/">Guide to Night Photography</a></h3>
+
+        <h3><a href="https://community.infiniteflight.com/t/a-complete-guide-to-aviation-photography-2022/464392">Guide to Aviation Photography</a></h3>
+        
+       <div class="footer">
+             <a href="https://www.capturelandscapes.com/beginners-guide-to-night-photography/" target="_blank">Night Photography Guide</a>
+             <a href="https://community.infiniteflight.com/t/a-complete-guide-to-aviation-photography-2022/464392" target="_blank">Aviation Photography Guide</a>
+             <p>2025 Night Wings – Ideas in motion, moments in memory.</p>
+       </div>
+
+        <!-- script [PLACEHOLDER] [ADDED IN UNIT 5] -->
+ 
+    <script src="index.js"></script>
+    </body>
+</html>

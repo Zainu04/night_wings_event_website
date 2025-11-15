@@ -1,0 +1,539 @@
+/*** VSCodeEDU preview fix 
+
+  Purpose:
+  - Fix VSCodeEDU issue that causes a white border to show around
+    the preview window
+
+  When To Modify:
+  - If you change the background color of your webpage, you may need to update this rule too.
+***/
+html {
+    background-color: var(--bg-color);
+    scroll-padding-top: 70px;
+}
+
+/*** body ***
+  
+  Purpose:
+  - Add style rules for the body of your webpage
+  - This is useful if you want a rule to apply to EVERYTHING on your page
+    - (Tip: You can always override these rules later in the stylesheet)
+
+  When To Modify:
+  - [ ] Project 3 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: "Trebuchet MS", sans-serif;
+    text-align: center;          
+    margin: 0;                  
+    padding: 0 20px;              
+    font-size: 16px;
+    line-height: 1.6;          
+    box-sizing: border-box;
+}
+
+ 
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #0b143b;  
+    color: white;
+    padding: 20px 0 40px 0;
+    width: 100%;
+    box-sizing: border-box;
+                  
+}
+
+
+
+.header-item:nth-of-type(1) {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header-item:nth-of-type(2) {
+    width: 40%;
+    display: flex;       
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto 0 auto;
+}
+
+
+#header-img {
+    margin-left: 10px;        /* required */
+    margin-right: 10px;       /* required */
+    width: 120px;             /* required */
+    max-width: 150px;         /* required */
+}
+
+.header-button {
+    display: inline-block;    /* keeps buttons side by side */
+    background-color: orange; /* required */
+    text-align: center;       /* required */
+    font-size: 16px;          /* required */
+    color: white;             /* required */
+    padding: 8px 16px;        /* required */
+    margin: 0;                /* override auto spacing so flex works */
+    border: none;             /* required */
+    cursor: pointer;          /* required */
+}
+
+
+
+
+
+
+
+/*** Text ***
+  
+  Purpose: 
+  - Add style rules for headings (h1-6),
+    paragraphs (p), links (a), and buttons
+
+  When To Modify:
+  - [X] Project 3 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+/* Base styles for any heading */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Trebuchet MS", sans-serif;
+    color: white;        
+    text-align: center;  
+    margin: 15px 0; 
+    letter-spacing: 1px;
+    Line-height: 1.3;     
+}
+
+
+h1 {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 32px;
+    color:  #0b143b;       /* orange for subheadings */
+    text-decoration: underline;
+}
+
+
+h3 {
+    color: #0b143b;
+    font-size: 24px;
+    font-style: italic;
+}
+
+.quote {
+    color: orange;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #EFBF04;
+    padding-bottom: 5px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: black;
+    text-align: justify;
+    margin: 10px 0;
+}
+
+
+a, a * {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:link {
+    color: #EFBF04;
+}
+
+a:visited {
+    color: lightskyblue;
+}
+
+a:hover {
+    color: orange;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:active {
+    color: #ff6f00;
+}
+
+ 
+
+button {
+    background-color: #EFBF04;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+
+button:hover {
+  background-color: #EFBF04;
+  transform: scale(1.05);
+}
+
+ .important {
+        color: orange;
+        border-left: 4px solid #ff6f00;
+        border-right: 4px solid #ff6f00;
+        padding: 10px;
+ }
+
+#interesting {
+    background-color: orange;
+    font-weight: bold;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+
+/*** header ***
+  
+  Purpose:
+  - Add style rules for your website's header section
+
+  When To Modify:
+  - [X] Project 3 (REQUIRED FEATURE) 
+  - [ ] Project 4 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** footer ***
+  
+  Purpose:
+  - Add style rules for your website's footer section
+
+  When To Modify:
+  - [ ] Project 3 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+.footer { /* Example B: This styles elements with class="footer" */
+    position: relative;
+    display: flex;               /* flex container for footer */
+    flex-direction: column;      /* stack links and text vertically */
+    align-items: center;         /* center horizontally */
+    justify-content: center;     /* center vertically */
+    width: 100%;                 /* full width */
+    background-color: #0b143b;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+
+
+.footer a {
+    color: #EFBF04;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+}
+
+/*** Navigation bar (navbar) ***
+  
+  Purpose:
+  - Add style rules for your website's navbar
+
+  When To Modify:
+  - [ ] Project 4 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+/* Keep your navbar as is */
+
+/* Spacing below navbar */
+/* Navbar links styling (same as yours) */
+/* Navbar */
+/* Navbar styling */
+/* Keep your required navbar rules */
+.navbar ul {
+    list-style-type: none;
+    overflow: hidden;
+    position: fixed;       /* REQUIRED */
+    top: 0;                /* REQUIRED */
+    left: 0;               /* REQUIRED */
+    width: 100%;           /* REQUIRED */
+    margin: 0;             /* REQUIRED */
+    padding: 0;            /* REQUIRED */
+    background-color: #0b143b;  /* REQUIRED */
+    z-index: 1000;         /* REQUIRED */
+    display: flex;         /* horizontal layout */
+    align-items: center;   /* vertically center links */
+    justify-content: center;
+    height: 70px;          /* adjust to make navbar taller */
+}
+
+.navbar ul li {
+    margin: 0 10px;
+    float: left;
+}
+
+.navbar ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #e0e0e0;
+    padding: 0 20px;
+    height: 100%;          /* fill navbar height */
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    background-color: orange;
+    color: white;
+    text-decoration: underline;
+}
+
+#theme-button {
+  background: linear-gradient(45deg, #5d49b4, #1a035e);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#theme-button:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+/* Header adjustments */
+.header-container {
+    margin-top: 0;               /* remove extra space */
+    padding-top: 70px;           /* same as navbar height so content starts below navbar */
+    background-color: #0b143b;   /* same as navbar to blend together */
+    box-sizing: border-box;
+}
+
+
+.header-container,
+.footer {
+    width: calc(100% + 60px + 20px); /* 30px padding left + 30px padding right + 10px body margin */
+    margin-left: -40px;               /* adjust for left margin + padding */
+    margin-right: -20px;              /* adjust for right margin */
+    box-sizing: border-box;
+}
+
+.event-img {
+    display: block;       /* makes image a block element */
+    margin: 20px auto;    /* centers image horizontally and adds vertical spacing */
+    max-width: 90%;       /* optional for responsiveness */
+    height: auto;
+}
+
+
+/*** About Section ***
+  
+  Purpose:
+  - Add style rules for your website's About section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** Schedule Section ***
+  
+  Purpose:
+  - Add style rules for your website's Schedule section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** Links Section ***
+  
+  Purpose:
+  - Add style rules for your website's Links section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+
+/*** RSVP Section ***
+  
+  Purpose:
+  - Add style rules for your website's RSVP form
+
+  When To Modify:
+  - [ ] Project 6 (REQUIRED FEATURE)
+  - [ ] Project 7 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+
+.error {
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--error-color-border);
+  background-color: var(--error-color);
+}
+
+
+.rsvp-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.rsvp-para {
+    width: 55%;
+    padding-right: 10px;
+}
+
+#rsvp-count {
+    text-align: center;   
+    font-weight: bold;    
+    margin: 10px 0;       
+    font-size: 16px;      
+}
+
+.rsvp-participants {
+    width: 45%;
+    padding-right: 10px;
+}
+
+.form-container form {
+    display: flex;
+    flex-wrap: wrap;        /* allows wrapping on small screens */
+    gap: 10px;              
+    align-items: center;    
+    justify-content: center;
+}
+
+.form-container input {
+    padding: 8px;
+    font-size: 14px;
+    width: 150px;           /* give a fixed width so inputs don't take full line */
+    box-sizing: border-box;
+}
+
+.form-container button {
+    padding: 10px 16px;
+    font-size: 14px;
+    height: 36px;           
+}
+
+
+
+/* Default dark mode style */
+.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+.dark-mode body {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* Example: Different dark mode style for headings */
+.dark-mode h2, 
+.dark-mode h3 {
+  color: #ffcc00;
+}
+.dark-mode h1 {
+    color: orange;
+}
+
+.dark-mode p {
+    color: white;
+}
+
+.dark-mode .header-container {
+    background-color: #263677;
+}
+/* Example: Links change color */
+.dark-mode a {
+  color: #ffcc00;
+}
+
+.dark-mode a:hover {
+  color: #ffd966;
+}
+
+/* Example: Different dark mode style for visited links */
+.dark-mode a:visited * {
+  color: #c9a104;
+}
+
+/*** Custom Colors (OPTIONAL) ***
+  
+  Purpose:
+  - Use CSS variables to define custom colors for your website
+  - To get you started, we've provided the color scheme used in our example site.
+  - To reference a color variable in your css, use var(--variable-name) in place of a color value
+
+  When To Modify:
+  - [ ] Any time (OPTIONAL)
+***/
+
+:root {
+  /* Light Mode */
+  --bg-color: rgb(230, 230, 230);
+  --text-color: #000000;
+  --header-bg: #0b143b;
+  --accent-color: orange;
+
+  /* Dark Mode */
+  --bg-color-dark: #0b143b;   /* main dark background */
+  --text-color-dark: #ffffff;
+  --header-bg-dark: #000000;  /* darker header color */
+  --accent-color-dark: #ffcc00;
+
+    /* Error Colors */
+    --error-color: #f8bbd0;
+    --error-color-border: #e63946;
+}
