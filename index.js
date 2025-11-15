@@ -33,6 +33,17 @@ themeButton.addEventListener("click", toggleDarkMode);
   - [ ] Any time between / after
 ***/
 
+
+window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 250) {       // adjust 50 for when background should appear
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
+
+
 // Step 1: Add your query for the submit RSVP button here
 
 const rsvpButton = document.getElementById("rsvp-button");
@@ -129,3 +140,4 @@ rsvpButton.addEventListener("click", validateForm);
 
 /*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
 /*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
+

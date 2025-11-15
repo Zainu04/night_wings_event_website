@@ -38,19 +38,40 @@ body {
 
  
 .header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: #0b143b;  
-    color: white;
-    padding: 20px 0 40px 0;
-    width: 100%;
-    box-sizing: border-box;
-                  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background-image: url('img/istockphoto-1360217567-612x612.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  height: 90vh; /* keep full hero height */
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative; /* required for overlay */
 }
 
+.header-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.4); /* lighter dark overlay */
+  z-index: 0;
+}
+
+/* Keep text above overlay */
+.header-container > * {
+  position: relative;
+  z-index: 1;
+}
 
 
 .header-item:nth-of-type(1) {
@@ -77,19 +98,61 @@ body {
 }
 
 .header-button {
-    display: inline-block;    /* keeps buttons side by side */
-    background-color: orange; /* required */
-    text-align: center;       /* required */
-    font-size: 16px;          /* required */
-    color: white;             /* required */
-    padding: 8px 16px;        /* required */
-    margin: 0;                /* override auto spacing so flex works */
-    border: none;             /* required */
-    cursor: pointer;          /* required */
+  width: 160px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #ffd966;
+  background: transparent;  /* keep button transparent */
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.5s ease; /* smooth text color change */
+}
+
+.header-button span {
+  background: #ffd966;
+  height: 100%;
+  width: 0;                  /* start hidden */
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  top: 0;                     /* cover full button area */
+  z-index: -1;
+  transition: width 0.5s ease; /* smooth fill */
+}
+
+.header-button:hover span {
+  width: 100%;               /* only the span fills in */
+}
+
+.header-button:hover {
+  color: #0b143b;            /* text turns dark on hover */
+  /* no background change here */
 }
 
 
 
+/* Hero header headings */
+.header-container h1 {
+  color: #ffffff;          /* clean white for main heading */
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);  /* subtle shadow for readability */
+  font-size: 60px;       /* slightly bigger for impact */
+  font-weight: 800;
+  margin-top: 80px;
+}
+
+.header-container h3 {
+  color: white;          /* soft gold accent for subtitle */
+  font-size: 1.8rem;
+  font-weight: 100;
+  margin: 0.5rem 0;
+  letter-spacing: 1px;
+}
 
 
 
@@ -107,7 +170,7 @@ body {
 
 /* Base styles for any heading */
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Trebuchet MS", sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     color: white;        
     text-align: center;  
     margin: 15px 0; 
@@ -117,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 h1 {
-    font-size: 42px;
+    font-size: 50px;
     font-weight: bold;
 }
 
@@ -193,10 +256,12 @@ button {
 }
 
 
-button:hover {
+button:not(.header-button):hover {
   background-color: #EFBF04;
   transform: scale(1.05);
 }
+
+
 
  .important {
         color: orange;
@@ -293,7 +358,7 @@ button:hover {
     width: 100%;           /* REQUIRED */
     margin: 0;             /* REQUIRED */
     padding: 0;            /* REQUIRED */
-    background-color: #0b143b;  /* REQUIRED */
+    background-color: transparent;  /* REQUIRED */
     z-index: 1000;         /* REQUIRED */
     display: flex;         /* horizontal layout */
     align-items: center;   /* vertically center links */
@@ -302,25 +367,41 @@ button:hover {
 }
 
 .navbar ul li {
-    margin: 0 10px;
+    margin: 0 20px;
     float: left;
 }
 
+/* Make the <a> element the pseudo-element container */
 .navbar ul li a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #e0e0e0;
-    padding: 0 20px;
-    height: 100%;          /* fill navbar height */
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #e0e0e0;
+  padding: 0 20px;
+  height: 100%;          
+  font-weight: bold;
+  position: relative; /* needed for ::after positioning */
 }
 
-.navbar ul li a:hover {
-    background-color: orange;
-    color: white;
-    text-decoration: underline;
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;            /* right under the text */
+  height: 3px;
+  width: 0;
+  background: #ffd966;
+  transition: width 0.5s;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;          /* expand underline on hover */
+}
+
+.navbar.scrolled ul {
+  background-color: #0b143b;  /* the solid color when scrolled */
+  transition: background-color 0.3s ease; /* smooth transition */
 }
 
 #theme-button {
