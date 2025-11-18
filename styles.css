@@ -154,21 +154,6 @@ body {
   letter-spacing: 1px;
 }
 
-
-
-
-/*** Text ***
-  
-  Purpose: 
-  - Add style rules for headings (h1-6),
-    paragraphs (p), links (a), and buttons
-
-  When To Modify:
-  - [X] Project 3 (REQUIRED FEATURE) 
-  - [ ] Any time after
-***/
-
-/* Base styles for any heading */
 h1, h2, h3, h4, h5, h6 {
     font-family:Arial, Helvetica, sans-serif;
     color: white;        
@@ -279,29 +264,7 @@ button:not(.header-button):hover {
 }
 
 
-/*** header ***
-  
-  Purpose:
-  - Add style rules for your website's header section
-
-  When To Modify:
-  - [X] Project 3 (REQUIRED FEATURE) 
-  - [ ] Project 4 (REQUIRED FEATURE) 
-  - [ ] Any time after
-***/
-
-
-/*** footer ***
-  
-  Purpose:
-  - Add style rules for your website's footer section
-
-  When To Modify:
-  - [ ] Project 3 (STRETCH FEATURE) 
-  - [ ] Any time after
-***/
-
-.footer { /* Example B: This styles elements with class="footer" */
+.footer { 
     position: relative;
     display: flex;               /* flex container for footer */
     flex-direction: column;      /* stack links and text vertically */
@@ -332,27 +295,10 @@ button:not(.header-button):hover {
     font-size: 14px;
 }
 
-/*** Navigation bar (navbar) ***
-  
-  Purpose:
-  - Add style rules for your website's navbar
-
-  When To Modify:
-  - [ ] Project 4 (REQUIRED FEATURE) 
-  - [ ] Any time after
-***/
-
-/* Keep your navbar as is */
-
-/* Spacing below navbar */
-/* Navbar links styling (same as yours) */
-/* Navbar */
-/* Navbar styling */
-/* Keep your required navbar rules */
 .navbar ul {
     list-style-type: none;
     overflow: hidden;
-    position: fixed;       /* REQUIRED */
+    position: fixed;       
     top: 0;                /* REQUIRED */
     left: 0;               /* REQUIRED */
     width: 100%;           /* REQUIRED */
@@ -371,7 +317,7 @@ button:not(.header-button):hover {
     float: left;
 }
 
-/* Make the <a> element the pseudo-element container */
+
 .navbar ul li a {
   display: flex;
   align-items: center;
@@ -381,14 +327,14 @@ button:not(.header-button):hover {
   padding: 0 20px;
   height: 100%;          
   font-weight: bold;
-  position: relative; /* needed for ::after positioning */
+  position: relative; 
 }
 
 .navbar ul li a::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;            /* right under the text */
+  bottom: 0;            
   height: 3px;
   width: 0;
   background: #ffd966;
@@ -396,12 +342,12 @@ button:not(.header-button):hover {
 }
 
 .navbar ul li a:hover::after {
-  width: 100%;          /* expand underline on hover */
+  width: 100%;          
 }
 
 .navbar.scrolled ul {
-  background-color: #0b143b;  /* the solid color when scrolled */
-  transition: background-color 0.3s ease; /* smooth transition */
+  background-color: #0b143b;  
+  transition: background-color 0.3s ease; 
 }
 
 #theme-button {
@@ -422,76 +368,169 @@ button:not(.header-button):hover {
 
 /* Header adjustments */
 .header-container {
-    margin-top: 0;               /* remove extra space */
-    padding-top: 70px;           /* same as navbar height so content starts below navbar */
-    background-color: #0b143b;   /* same as navbar to blend together */
+    margin-top: 0;               
+    padding-top: 70px;           
+    background-color: #0b143b;   
     box-sizing: border-box;
 }
 
 
 .header-container,
 .footer {
-    width: calc(100% + 60px + 20px); /* 30px padding left + 30px padding right + 10px body margin */
-    margin-left: -40px;               /* adjust for left margin + padding */
-    margin-right: -20px;              /* adjust for right margin */
+    width: calc(100% + 60px + 20px); 
+    margin-left: -40px;               
+    margin-right: -20px;              
     box-sizing: border-box;
 }
 
 .event-img {
-    display: block;       /* makes image a block element */
-    margin: 20px auto;    /* centers image horizontally and adds vertical spacing */
-    max-width: 90%;       /* optional for responsiveness */
+    display: block;       
+    margin: 20px auto;    
+    max-width: 90%;       
     height: auto;
 }
 
 
-/*** About Section ***
-  
-  Purpose:
-  - Add style rules for your website's About section
+/* About Section Container */
+.about-section {
+  padding: 60px 20px; 
+  background-color: (--bg-color); 
+}
 
-  When To Modify:
-  - [ ] Project 3 (OPTIONAL)
-  - [ ] Project 4 (STRETCH FEATURE) 
-  - [ ] Any time after
-***/
+/* Flex container for text + image */
+.about-container {
+  display: flex;
+  align-items: center;   
+  justify-content: space-between; 
+  max-width: 1000px;       
+  margin: 0 auto;         
+  gap: 40px;               
+  flex-wrap: wrap;         
+}
+
+/* Text on the left */
+.about-text {
+  flex: 1 1 500px;        
+  color: #000;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Image on the right */
+.about-image {
+  flex: 0 0 400px;         
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;             
+  max-width: 400px;        
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid #EFBF04;
+}
+
+/* Responsive: stack text above image on smaller screens */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text {
+    min-width: 0;
+    padding: 0;
+  }
+
+  .about-image {
+    flex: 1 1 auto;
+    max-width: 80%;
+  }
+}
 
 
-/*** Schedule Section ***
-  
-  Purpose:
-  - Add style rules for your website's Schedule section
+/* Highlights Section */
+.about-highlights {
+  padding: 4rem 2rem;            
+  max-width: 1200px;             
+  margin: 0 auto;
+  text-align: center;
+}
 
-  When To Modify:
-  - [ ] Project 3 (OPTIONAL)
-  - [ ] Project 4 (STRETCH FEATURE) 
-  - [ ] Any time after
-***/
+.about-highlights h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0b143b;
+}
 
+.about-highlights h4 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
 
-/*** Links Section ***
-  
-  Purpose:
-  - Add style rules for your website's Links section
+/* Cards container */
+.highlights-cards {
+  display: flex;
+  justify-content: space-between; 
+  gap: 2rem;                      
+  padding: 0 1rem;               
+}
 
-  When To Modify:
-  - [ ] Project 3 (OPTIONAL)
-  - [ ] Project 4 (STRETCH FEATURE) 
-  - [ ] Any time after
-***/
+/* Individual cards */
+.highlight-card {
+  flex: 1 1 30%;                 
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  min-height: 180px;
+  transition: transform 0.5s, box-shadow 0.5s;
+  opacity: 0;
+  transform: translateY(50px);
+  letter-spacing: normal;         
+}
 
+/* Slide-up animation on scroll */
+.highlight-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
+/* Card hover effect */
+.highlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
 
-/*** RSVP Section ***
-  
-  Purpose:
-  - Add style rules for your website's RSVP form
+/* Card text */
+.highlight-card h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  color: #0b143b;
+}
 
-  When To Modify:
-  - [ ] Project 6 (REQUIRED FEATURE)
-  - [ ] Project 7 (REQUIRED FEATURE)
-  - [ ] Any time after
-***/
+.highlight-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333333;
+}
+
+/* Responsive: stack cards on smaller screens */
+@media (max-width: 900px) {
+  .highlights-cards {
+      flex-direction: column;
+      gap: 1.5rem;
+  }
+
+  .highlight-card {
+      flex: 1 1 100%;
+  }
+}
+
 
 .error {
   border-style: solid;
@@ -528,7 +567,7 @@ button:not(.header-button):hover {
 
 .form-container form {
     display: flex;
-    flex-wrap: wrap;        /* allows wrapping on small screens */
+    flex-wrap: wrap;        
     gap: 10px;              
     align-items: center;    
     justify-content: center;
@@ -537,7 +576,7 @@ button:not(.header-button):hover {
 .form-container input {
     padding: 8px;
     font-size: 14px;
-    width: 150px;           /* give a fixed width so inputs don't take full line */
+    width: 150px;           
     box-sizing: border-box;
 }
 

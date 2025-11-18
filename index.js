@@ -137,6 +137,21 @@ const validateForm = (event) => {
 
 rsvpButton.addEventListener("click", validateForm);
 
+// Animate cards when they come into view
+const cards = document.querySelectorAll('.highlight-card');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.2 });
+
+cards.forEach(card => observer.observe(card));
+
+
+
 
 /*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
 /*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
