@@ -19,19 +19,7 @@ const toggleDarkMode = () => {
 //             and tell it to use toggleDarkMode as its callback function
 themeButton.addEventListener("click", toggleDarkMode);
 
-/*** Form Handling ***
-  
-  Purpose:
-  - When the user submits the RSVP form, the name and state they 
-    entered should be added to the list of participants.
-
-  When To Modify:
-  - [ ] Project 6 (REQUIRED FEATURE)
-  - [ ] Project 6 (STRETCH FEATURE) 
-  - [ ] Project 7 (REQUIRED FEATURE)
-  - [ ] Project 9 (REQUIRED FEATURE)
-  - [ ] Any time between / after
-***/
+/*** Form Handling ******/
 
 
 window.addEventListener("scroll", function() {
@@ -56,11 +44,13 @@ const addParticipant = (event) => {
     const name = document.getElementById("name").value;
     const state = document.getElementById("state").value;
 
-    const newParticipant = document.createElement("p");
-    newParticipant.textContent = `🎟️ ${name} from ${state} has RSVP'd.`;
+    const newParticipant = document.createElement("li");
+    newParticipant.textContent = `${name} from ${state} has RSVP'd.`;
 
-    const participantsList = document.querySelector(".rsvp-participants");
+    const participantsList = document.getElementById("participants-list");
     participantsList.appendChild(newParticipant);
+
+    newParticipant.textContent = `🎟️ ${name} from ${state} has RSVP'd.`;
 
     // Increment count and update message
     count += 1;
@@ -80,22 +70,9 @@ const addParticipant = (event) => {
 
 
 
-// Step 3: Add a click event listener to the submit RSVP button here
-/*** Form Validation ***
-  
-  Purpose:
-  - Prevents invalid form submissions from being added to the list of participants.
 
-  When To Modify:
-  - [ ] Project 7 (REQUIRED FEATURE)
-  - [ ] Project 7 (STRETCH FEATURE)
-  - [ ] Project 9 (REQUIRED FEATURE)
-  - [ ] Any time between / after
-***/
 
-// Step 1: We actually don't need to select the form button again -- we already did it in the RSVP code above.
 
-// Step 2: Write the callback function
 const validateForm = (event) => {
     event.preventDefault(); // prevent default form submission
     
@@ -118,7 +95,6 @@ const validateForm = (event) => {
         }
     }
 
-    // Stretch: check email contains @
     const emailInput = document.getElementById("email");
     if (!emailInput.value.includes("@")) {
         containsErrors = true;

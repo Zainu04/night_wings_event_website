@@ -12,17 +12,7 @@ html {
     scroll-padding-top: 70px;
 }
 
-/*** body ***
-  
-  Purpose:
-  - Add style rules for the body of your webpage
-  - This is useful if you want a rule to apply to EVERYTHING on your page
-    - (Tip: You can always override these rules later in the stylesheet)
 
-  When To Modify:
-  - [ ] Project 3 (REQUIRED FEATURE) 
-  - [ ] Any time after
-***/
 
 body {
     background-color: var(--bg-color);
@@ -36,7 +26,14 @@ body {
     box-sizing: border-box;
 }
 
- 
+/* Reset for full-width backgrounds */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Header container */
 .header-container {
   display: flex;
   flex-direction: column;
@@ -44,17 +41,20 @@ body {
   justify-content: center;
   text-align: center;
 
+  width: 100%;
+  height: 90vh; /* full viewport height */
+  margin: 0; 
+  padding: 0;  /* remove all internal padding affecting width */
+  box-sizing: border-box;
+  position: relative;
+
   background-image: url('img/istockphoto-1360217567-612x612.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  width: 100%;
-  height: 90vh; /* keep full hero height */
-  padding: 20px;
-  box-sizing: border-box;
-  position: relative; /* required for overlay */
 }
+
+
 
 .header-container::before {
   content: "";
@@ -377,25 +377,19 @@ button:not(.header-button):hover {
 
 .header-container,
 .footer {
-    width: calc(100% + 60px + 20px); 
-    margin-left: -40px;               
-    margin-right: -20px;              
-    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.event-img {
-    display: block;       
-    margin: 20px auto;    
-    max-width: 90%;       
-    height: auto;
-}
 
 
 /* About Section Container */
 .about-section {
   padding: 60px 20px; 
-  background-color: (--bg-color); 
+  background-color: var(--bg-color); 
 }
+
 
 /* Flex container for text + image */
 .about-container {
@@ -452,85 +446,107 @@ button:not(.header-button):hover {
   }
 }
 
-
-/* Highlights Section */
-.about-highlights {
-  padding: 4rem 2rem;            
-  max-width: 1200px;             
-  margin: 0 auto;
+.highlights {
+  width: 80%;
+  margin: auto;
   text-align: center;
+  padding-top: 50px;
 }
 
-.about-highlights h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #0b143b;
+.highlights h1{
+  font-size: 36px;
+  font-weight: 600;
+  color: #000;
 }
 
-.about-highlights h4 {
-  margin-bottom: 2rem;
-  font-size: 1.5rem;
+.highlights p{
+  color:#777;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
 }
 
-/* Cards container */
-.highlights-cards {
+.row{
+  margin-top: 5%;
   display: flex;
-  justify-content: space-between; 
-  gap: 2rem;                      
-  padding: 0 1rem;               
+  justify-content: space-between;
 }
 
-/* Individual cards */
-.highlight-card {
-  flex: 1 1 30%;                 
-  background-color: #ffffff;
+.highlight-card{
+  flex-basis: 31%;
+  background: #f2f2f6;
   border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  padding: 1.5rem;
-  min-height: 180px;
-  transition: transform 0.5s, box-shadow 0.5s;
-  opacity: 0;
-  transform: translateY(50px);
-  letter-spacing: normal;         
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
 }
 
-/* Slide-up animation on scroll */
-.highlight-card.visible {
-  opacity: 1;
-  transform: translateY(0);
+.highlights h3{
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0;
 }
 
-/* Card hover effect */
-.highlight-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-}
-
-/* Card text */
-.highlight-card h3 {
-  margin-bottom: 0.8rem;
-  font-size: 1.2rem;
-  color: #0b143b;
-}
-
-.highlight-card p {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #333333;
-}
-
-/* Responsive: stack cards on smaller screens */
-@media (max-width: 900px) {
-  .highlights-cards {
-      flex-direction: column;
-      gap: 1.5rem;
+.highlight-card:hover{ 
+   box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
   }
+ 
 
-  .highlight-card {
-      flex: 1 1 100%;
+ .my-divider {
+  border: none; /* Remove default border */
+  border-top: 2px solid #ccc; /* Add a custom top border */
+  margin: 20px 0; /* Add vertical spacing */
+  width: 50%; /* Set a specific width */
+  margin-left: auto; /* Center the divider */
+  margin-right: auto;
+}
+
+@media(max-width: 700px){
+  .row{
+    flex-direction: column;
   }
 }
 
+.schedule{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+
+}
+.schedule h2{
+  margin-top: -30px;
+}
+
+.schedule-cards p{
+  color:#777;
+  padding:0;
+}
+
+.schedule p{
+  color: #777;
+}
+
+.schedule-cards h3{
+  margin-top: 16px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.schedule-cards{
+  flex-basis: 31%;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  text-align: left;
+}
+
+.schedule-cards img{
+  width: 100%;
+  border-radius: 10px;
+}
 
 .error {
   border-style: solid;
@@ -539,30 +555,35 @@ button:not(.header-button):hover {
   background-color: var(--error-color);
 }
 
-
 .rsvp-container {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    width: 100%;
-    padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  padding-bottom: 50px;
+  justify-content: center; /* centers both items in the container */
 }
 
 .rsvp-para {
-    width: 55%;
-    padding-right: 10px;
-}
-
-#rsvp-count {
-    text-align: center;   
-    font-weight: bold;    
-    margin: 10px 0;       
-    font-size: 16px;      
+  width: 45%;   /* smaller width so it's closer to the center */
+  padding-right: 10px;
 }
 
 .rsvp-participants {
-    width: 45%;
-    padding-right: 10px;
+  width: 45%;
+  padding-left: 10px; /* instead of right padding */
+}
+
+.rsvp-participants ol {
+  list-style: decimal;   /* numbers */
+  padding-left: 20px;    
+  text-align: left;
+}
+
+.rsvp-participants li {
+  margin-bottom: 10px;   /* spacing between participants */
+  font-weight: bold;
+  color: #0b143b;
 }
 
 .form-container form {
@@ -585,7 +606,6 @@ button:not(.header-button):hover {
     font-size: 14px;
     height: 36px;           
 }
-
 
 
 /* Default dark mode style */
@@ -629,16 +649,6 @@ button:not(.header-button):hover {
   color: #c9a104;
 }
 
-/*** Custom Colors (OPTIONAL) ***
-  
-  Purpose:
-  - Use CSS variables to define custom colors for your website
-  - To get you started, we've provided the color scheme used in our example site.
-  - To reference a color variable in your css, use var(--variable-name) in place of a color value
-
-  When To Modify:
-  - [ ] Any time (OPTIONAL)
-***/
 
 :root {
   /* Light Mode */

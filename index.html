@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- head
-
-        Purpose:
-        - Title used here shows up in the browser tab
-        - Link to the favicon (small image that appears in the browser tab)
-        - Link to the CSS file (used to style the webpage)
-
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 2 (STRETCH FEATURE) (favicon)
-        - [ ] Any time after
-        -->
+        <!-- head-->
+        <head>
+            <meta charset="UTF-8">
+            
+        </head>
+        
         <link rel="stylesheet" href="styles.css">
         <title>Night Wing's</title>
         <link rel="icon" href="img/favicon.ico">
@@ -76,70 +70,60 @@ When To Modify:
             </div>
           </section>
           
-        
-          <section class="about-highlights">
-            <h2>What to Expect</h2>
-            <h4 class="important">Highlights of Night Wings</h4>
-            <div class="highlights-cards">
+          <hr class="my-divider">
+
+          <section class="highlights">
+            <h1 class="expect">What to Expect</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum temporibus et facere iusto eum aut ea dolor est earum expedita pariatur omnis explicabo reiciendis qui, consectetur asperiores non. Inventore, repellendus.</p>
+
+            <div class="row">
                 <div class="highlight-card">
                     <h3>Photography Tips</h3>
                     <p>Learn techniques for capturing airplanes at night with guidance from experts.</p>
                 </div>
+
                 <div class="highlight-card">
                     <h3>Community</h3>
                     <p>Connect with fellow aviation and photography enthusiasts to share ideas and experiences.</p>
                 </div>
+
                 <div class="highlight-card">
                     <h3>Creative Atmosphere</h3>
                     <p>Enjoy the calm, inspiring environment while capturing beautiful nighttime shots.</p>
                 </div>
             </div>
-        </section>
+          </section>
         
-          
-         
-           
+          <hr class="my-divider">
 
-        <!-- schedule
+          <section class="schedule">
+            <h2>Schedule</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima officiis saepe provident consequuntur ducimus, eaque, quidem nemo quibusdam explicabo nam veritatis aut? Optio corporis reiciendis maiores, soluta consectetur nobis dolores?</p>
 
-        Purpose:
-        - Section for specific info about the event's schedule
-        - Contains images and descriptions of each activity
+            <div class="row">
+                
+                <div class="schedule-cards">
+                    <img class="event-img" alt="Airplane being photographed at night" src="./img/PL6_3305-large.png"/>
+                    <h3>Capturing The Moment</h3>
+                    <p>Photographers line the runway, cameras poised and anticipation buzzing in the cool night air. Everyone shares the same excitement—ready to capture the perfect shot as the airplanes take center stage.</p>
+                </div>
 
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        --> 
-        <h2 id="schedule">Event Schedule</h2>
+                <div class="schedule-cards">
+                    <img class="event-img" alt="Aircraft flying" src="img/istockphoto-1163548982-612x612.jpg"/>
+                    <h3>Interactive Aircraft Displays</h3>
+                    <p>Attendees explore static aircraft exhibits, stepping inside cockpits, examining instruments, and learning about aviation technology. Experts are on hand to answer questions, making it a hands-on experience for aviation enthusiasts of all ages."</p>
+                </div>
 
-        <img class="event-img" alt="Airplane being photographed at night" src="./img/PL6_3305-large.png" height="300" width="400"/>~
-        <h3>Capturing the Moment</h3>
-        <p>Photographers line the runway, cameras poised and anticipation buzzing in the cool night air. Everyone shares the same excitement—ready to capture the perfect shot as the airplanes take center stage.</p>
-            
-        <img class="event-img" alt="Aircraft flying" src="img/istockphoto-1163548982-612x612.jpg" height="300" width="400"/>
-        <h3>Interactive Aircraft Displays</h3>
-        <p>Attendees explore static aircraft exhibits, stepping inside cockpits, examining instruments, and learning about aviation technology. Experts are on hand to answer questions, making it a hands-on experience for aviation enthusiasts of all ages."</p>
+                <div class="schedule-cards">
+                    <img class="event-img" alt="Plane on runway" src="img/istockphoto-696113780-612x612.jpg"/>
+                    <h3>Night Flight Demonstrations</h3>
+                    <p>Under the night sky, pilots perform dazzling maneuvers and takeoffs. The crowd watches in awe as lights trace their path across the runway, blending the thrill of flight with the beauty of nighttime aviation."</p>
+                </div>
 
-        <img class="event-img" alt="Plane on runway" src="img/istockphoto-696113780-612x612.jpg" height="300" width="400"/>
-        <h3>Night Flight Demonstrations</h3>
-        <p>Under the night sky, pilots perform dazzling maneuvers and takeoffs. The crowd watches in awe as lights trace their path across the runway, blending the thrill of flight with the beauty of nighttime aviation."</p>
+          </section>
 
-        <h2 id="contact">Contact</h2>
-        <p>If you have questions or want to connect, reach out to us via email at info@nightwings.com.</p>
-
-        <!-- rsvp
-
-Purpose:
-- Section for users to sign up for the event
-- Contains a form for users to input their information, 
-and a list of other users who have signed up
-
-When To Modify:
-- [ ] Project 6 (REQUIRED FEATURE) 
-- [ ] Project 6 (STRETCH FEATURE) 
-- [ ] Any time after
---> 
+        
+        <!-- rsvp--> 
 <div id="rsvp">
     <h2>RSVP</h2>
     <p id="rsvp-count">⭐ 3 people have RSVP'd to this event!</p>
@@ -147,11 +131,15 @@ When To Modify:
         <div class="rsvp-para">
             <p>Join Night Wings! Sign up now to get updates about the event and be part of our aviation photography community.</p>
         </div>
+
         <div class="rsvp-participants">
-            <p>🎟️ Alex from Florida has RSVP'd.</p>
-            <p>🎟️ Jamie from California has RSVP'd.</p>
-            <p>🎟️ Sam from New York has RSVP'd.</p>
+            <ol id="participants-list">
+                <li>🎟️ Alex from Florida has RSVP'd.</li>
+                <li>🎟️ Jamie from California has RSVP'd.</li>
+                <li>🎟️ Sam from New York has RSVP'd.</li>
+            </ol>
         </div>
+        
     </div>
 
     <!--- Sign RSVP Form --->
@@ -172,22 +160,8 @@ When To Modify:
     </div>      
 </div>
 
-        <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
-
-        <!-- links
-
-        Purpose:
-       <-- Links to other resources related to the event-->
-
-      <!--When To Modify:
-        - [ ] Project 2 (STRETCH FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after--> 
 
         <h2 id="links">Links</h2>
-
-        <!-- This <a> block is one link.  Copy and paste all 6 lines to create another link. -->
-    
 
         <h3><a href="https://www.capturelandscapes.com/beginners-guide-to-night-photography/">Guide to Night Photography</a></h3>
 
@@ -199,7 +173,6 @@ When To Modify:
              <p>2025 Night Wings – Ideas in motion, moments in memory.</p>
        </div>
 
-        <!-- script [PLACEHOLDER] [ADDED IN UNIT 5] -->
  
     <script src="index.js"></script>
     </body>
