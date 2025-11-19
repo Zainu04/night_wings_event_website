@@ -211,31 +211,79 @@ button:not(.header-button):hover {
   padding: 8px 12px;
   border-radius: 6px;
 }
+
 .footer {
-  position: relative;
-  display: flex; /* flex container for footer */
-  flex-direction: column; /* stack links and text vertically */
-  align-items: center; /* center horizontally */
-  justify-content: center; /* center vertically */
-  width: 100%; /* full width */
   background-color: #0b143b;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
+  color: #ffffff;
+  width: 100%;
+  padding: 50px 20px 20px 20px;
   box-sizing: border-box;
 }
+
 .footer a {
   color: #EFBF04;
   text-decoration: none;
-  margin: 0 10px;
+  transition: 0.3s;
 }
+
 .footer a:hover {
+  color: orange;
   text-decoration: underline;
 }
-.footer p {
-  margin: 5px 0 0 0;
-  font-size: 14px;
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 30px auto;
+  gap: 20px;
 }
+
+.footer-column {
+  flex: 1 1 250px;
+  min-width: 200px;
+}
+
+.footer-column h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #ffd966;
+}
+
+.footer .about-nightwings{
+  color: white;
+}
+.footer-column p, 
+.footer-column ul {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  text-align: center;       /* centers the text */
+  font-size: 14px;
+  color: #cccccc;           /* light gray color */
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 15px;
+}
+
+.footer-bottom p {
+  color: #cccccc;           /* ensures <p> inside footer-bottom inherits color */
+  margin: 0;                /* remove extra spacing */
+  text-align: center;       /* centers the paragraph text */
+}
+
+
+
 .navbar ul {
   list-style-type: none;
   overflow: hidden;
@@ -387,7 +435,8 @@ button:not(.header-button):hover {
   display: flex;
   justify-content: space-between;
 }
-.highlight-card{
+
+.highlight-card {
   flex-basis: 31%;
   background: #f2f2f6;
   border-radius: 10px;
@@ -395,7 +444,19 @@ button:not(.header-button):hover {
   padding: 20px 12px;
   box-sizing: border-box;
   transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.card-icon {
+  width: 60px;       /* fixed width */
+  height: 60px;      /* fixed height for alignment */
+  object-fit: contain; /* keeps proportions inside box */
+  display: block;
+  margin-bottom: 15px;
+}
+
 .highlights h3{
   text-align: center;
   font-weight: 600;
@@ -405,12 +466,14 @@ button:not(.header-button):hover {
   box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
   transform: translateY(-5px);
 }
+
+
 .my-divider {
-  border: none; /* Remove default border */
-  border-top: 2px solid #ccc; /* Add a custom top border */
-  margin: 20px 0; /* Add vertical spacing */
-  width: 50%; /* Set a specific width */
-  margin-left: auto; /* Center the divider */
+  border: none; 
+  border-top: 2px solid #ccc; 
+  margin: 20px 0; 
+  width: 50%; 
+  margin-left: auto; 
   margin-right: auto;
 }
 @media(max-width: 700px){
