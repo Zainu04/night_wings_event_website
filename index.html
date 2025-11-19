@@ -1,179 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- head-->
-        <head>
-            <meta charset="UTF-8">
-            
-        </head>
-        
-        <link rel="stylesheet" href="styles.css">
-        <title>Night Wing's</title>
-        <link rel="icon" href="img/favicon.ico">
+  </head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <title>Night Wing's</title>
+  <link rel="icon" href="img/favicon.ico">
+  </head>
 
-    </head>
-  
+  <body>
+    <!-- navbar-->
+    <div class="navbar">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#links">Links</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="theme-button">Toggle Dark Mode</button></li>
+      </ul>
+    </div>
 
-    <body>
-    
-        <!-- navbar
-
-Purpose:
-- Navigation bar that allows users to jump to different sections of the webpage
-- Also holds buttons for user settings (dark mode, reduce motion)
-
-When To Modify:
-- [ ] Project 4 (REQUIRED FEATURE)
-- [ ] Project 5 (REQUIRED FEATURE) 
-- [ ] Project 8 (STRETCH FEATURE) 
-- [ ] Any time between / after
--->
-<div class="navbar">
-    <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#schedule">Schedule</a></li>
-    <li><a href="#links">Links</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><button id="theme-button">Toggle Dark Mode</button></li>
-    </ul>
-</div>
-
-
-        <!-- headings -->
-   <div class="header-container">
-    <div class="header-item">
+    <!-- headings -->
+    <div class="header-container">
+      <div class="header-item">
         <img id="header-img" src="img/12063F5C-D455-4E2D-A495-C5B7046A1837.PNG" alt="Night Wings Logo">
         <h1>Night Wing's</h1>
         <h3 class="quote">Ideas in motion, moments in memory.</h3>
-    </div>
-    <div class="header-item">
+      </div>
+      <div class="header-item">
         <button class="header-button" type="button"><span></span>Get Tickets</button>
         <button class="header-button" type="button"><span></span>View Schedule</button>
+      </div>
     </div>
-</div>
 
-        
-        <!-- about --> 
-        <section class="about-section">
-            <div class="about-container">
-              <div class="about-text">
-                <h2>About the Event</h2>
-                <p>
-                  Night Wings is a nighttime aviation photography event where passionate individuals gather under the starry night sky to capture stunning images of airplanes. 
-                  The event takes place at an airport and includes helpful tips for nighttime photography, opportunities to connect with other enthusiasts, and a chance to share stories and photos. 
-                  Guests are encouraged to bring their own equipment, such as zoom lenses and tripods, to enjoy the creative and calm atmosphere filled with the sounds and sights of airplanes.
-                </p>
-              </div>
-              <div class="about-image">
-                <img src="img/photo-1513922203437-86dc31ea478f.jpeg" alt="Night Wings Photography Event">
-              </div>
-            </div>
-          </section>
-          
-          <hr class="my-divider">
+    <!-- about -->
+    <section class="about-section">
+      <div class="about-container">
+        <div class="about-text">
+          <h2>About the Event</h2>
+          <p>
+            Night Wings is a nighttime aviation photography event where passionate individuals gather under the starry night sky to capture stunning images of airplanes. The event takes place at an airport and includes helpful tips for nighttime photography, opportunities to connect with other enthusiasts, and a chance to share stories and photos. Guests are encouraged to bring their own equipment, such as zoom lenses and tripods, to enjoy the creative and calm atmosphere filled with the sounds and sights of airplanes.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="img/photo-1513922203437-86dc31ea478f.jpeg" alt="Night Wings Photography Event">
+        </div>
+      </div>
+    </section>
 
-          <section class="highlights">
-            <h1 class="expect">What to Expect</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum temporibus et facere iusto eum aut ea dolor est earum expedita pariatur omnis explicabo reiciendis qui, consectetur asperiores non. Inventore, repellendus.</p>
+    <hr class="my-divider">
 
-            <div class="row">
-                <div class="highlight-card">
-                    <h3>Photography Tips</h3>
-                    <p>Learn techniques for capturing airplanes at night with guidance from experts.</p>
-                </div>
+    <section class="highlights">
+      <h1 class="expect">What to Expect</h1>
+      <p>Experience expert photography tips, explore interactive aircraft displays, and connect with a vibrant community of aviation enthusiasts, all while enjoying the calm and inspiring atmosphere of the night sky.</p>
 
-                <div class="highlight-card">
-                    <h3>Community</h3>
-                    <p>Connect with fellow aviation and photography enthusiasts to share ideas and experiences.</p>
-                </div>
+      <div class="row">
+        <div class="highlight-card">
+          <h3>Photography Tips</h3>
+          <p>Learn techniques for capturing airplanes at night with guidance from experts.</p>
+        </div>
 
-                <div class="highlight-card">
-                    <h3>Creative Atmosphere</h3>
-                    <p>Enjoy the calm, inspiring environment while capturing beautiful nighttime shots.</p>
-                </div>
-            </div>
-          </section>
-        
-          <hr class="my-divider">
+        <div class="highlight-card">
+          <h3>Community</h3>
+          <p>Connect with fellow aviation and photography enthusiasts to share ideas and experiences.</p>
+        </div>
 
-          <section class="schedule">
-            <h2>Schedule</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima officiis saepe provident consequuntur ducimus, eaque, quidem nemo quibusdam explicabo nam veritatis aut? Optio corporis reiciendis maiores, soluta consectetur nobis dolores?</p>
+        <div class="highlight-card">
+          <h3>Creative Atmosphere</h3>
+          <p>Enjoy the calm, inspiring environment while capturing beautiful nighttime shots.</p>
+        </div>
+      </div>
+    </section>
 
-            <div class="row">
-                
-                <div class="schedule-cards">
-                    <img class="event-img" alt="Airplane being photographed at night" src="./img/PL6_3305-large.png"/>
-                    <h3>Capturing The Moment</h3>
-                    <p>Photographers line the runway, cameras poised and anticipation buzzing in the cool night air. Everyone shares the same excitement—ready to capture the perfect shot as the airplanes take center stage.</p>
-                </div>
+    <hr class="my-divider">
 
-                <div class="schedule-cards">
-                    <img class="event-img" alt="Aircraft flying" src="img/istockphoto-1163548982-612x612.jpg"/>
-                    <h3>Interactive Aircraft Displays</h3>
-                    <p>Attendees explore static aircraft exhibits, stepping inside cockpits, examining instruments, and learning about aviation technology. Experts are on hand to answer questions, making it a hands-on experience for aviation enthusiasts of all ages."</p>
-                </div>
+    <section class="schedule">
+      <h2>Schedule</h2>
+      <p class="schedule-text">The night begins with photographers gathering and setting up their equipment to capture the perfect shots. Guests can then explore interactive aircraft displays, followed by thrilling night flight demonstrations under the starry sky.</p>
 
-                <div class="schedule-cards">
-                    <img class="event-img" alt="Plane on runway" src="img/istockphoto-696113780-612x612.jpg"/>
-                    <h3>Night Flight Demonstrations</h3>
-                    <p>Under the night sky, pilots perform dazzling maneuvers and takeoffs. The crowd watches in awe as lights trace their path across the runway, blending the thrill of flight with the beauty of nighttime aviation."</p>
-                </div>
+      <div class="row">
+        <div class="schedule-cards">
+          <img class="event-img" alt="Airplane being photographed at night" src="./img/PL6_3305-large.png"/>
+          <h3>Capturing The Moment</h3>
+          <p>Photographers line the runway, cameras poised and anticipation buzzing in the cool night air. Everyone shares the same excitement—ready to capture the perfect shot as the airplanes take center stage.</p>
+        </div>
 
-          </section>
+        <div class="schedule-cards">
+          <img class="event-img" alt="Aircraft flying" src="img/istockphoto-1163548982-612x612.jpg"/>
+          <h3>Interactive Aircraft Displays</h3>
+          <p>Attendees explore static aircraft exhibits, stepping inside cockpits, examining instruments, and learning about aviation technology. Experts are on hand to answer questions, making it a hands-on experience for aviation enthusiasts of all ages."</p>
+        </div>
 
-        
-        <!-- rsvp--> 
-<div id="rsvp">
-    <h2>RSVP</h2>
-    <p id="rsvp-count">⭐ 3 people have RSVP'd to this event!</p>
-    <div class="rsvp-container">
+        <div class="schedule-cards">
+          <img class="event-img" alt="Plane on runway" src="img/istockphoto-696113780-612x612.jpg"/>
+          <h3>Night Flight Demonstrations</h3>
+          <p>Under the night sky, pilots perform dazzling maneuvers and takeoffs. The crowd watches in awe as lights trace their path across the runway, blending the thrill of flight with the beauty of nighttime aviation."</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="my-divider">
+
+    <!-- rsvp-->
+    <div id="rsvp">
+      <h2>RSVP</h2>
+      <div class="rsvp-container">
         <div class="rsvp-para">
-            <p>Join Night Wings! Sign up now to get updates about the event and be part of our aviation photography community.</p>
+          <p id="rsvp-count">⭐ 3 people have RSVP'd to this event!</p>
+          <p>Join Night Wings! Sign up now to get updates about the event and be part of our aviation photography community.</p>
         </div>
 
         <div class="rsvp-participants">
-            <ol id="participants-list">
-                <li>🎟️ Alex from Florida has RSVP'd.</li>
-                <li>🎟️ Jamie from California has RSVP'd.</li>
-                <li>🎟️ Sam from New York has RSVP'd.</li>
-            </ol>
+          <ol id="participants-list">
+            <li>🎟️ Alex from Florida has RSVP'd.</li>
+            <li>🎟️ Jamie from California has RSVP'd.</li>
+            <li>🎟️ Sam from New York has RSVP'd.</li>
+          </ol>
         </div>
-        
+      </div>
     </div>
 
     <!--- Sign RSVP Form --->
     <div class="form-container">
-        <form id="rsvp-form" title="rsvp-form">
+      <form id="rsvp-form" title="rsvp-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
 
-            <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Enrer your name" required>
+        <label for="hometown">Hometown:</label>
+        <input type="text" id="hometown" placeholder="Enter your hometown" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
+        <label for="state">State:</label>
+        <input type="text" id="state" placeholder="Enter your state" required>
 
-            <label for="state">State:</label>
-            <input type="text" id="state" placeholder="Enter your state" required>
-            <button id="rsvp-button">Submit RSVP</button>
-        </form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
 
-    </div>      
-</div>
+        <button id="rsvp-button">Submit RSVP</button>
+      </form>
+    </div>
 
+    <div id="success-modal" class="modal">
+      <div class="modal-container">
+        <div class="modal-item">
+          <p id="modal-text">Thanks for RSVPing!</p>
+          <button id="modal-close-btn">Close</button> <!-- Close button -->
+        </div>
+        <div class="modal-item">
+          <img id="modal-image" src="img/isso-ai.webp" alt="Celebration Image" />
+        </div>
+      </div>
+    </div>
 
-        <h2 id="links">Links</h2>
+    <hr class="my-divider">
 
-        <h3><a href="https://www.capturelandscapes.com/beginners-guide-to-night-photography/">Guide to Night Photography</a></h3>
+    <section id="links-section">
+      <h2 id="links">Links</h2>
+      <div class="links-container">
+        <a href="https://www.capturelandscapes.com/beginners-guide-to-night-photography/" target="_blank">Guide to Night Photography</a>
+        <a href="https://community.infiniteflight.com/t/a-complete-guide-to-aviation-photography-2022/464392" target="_blank">Guide to Aviation Photography</a>
+      </div>
+    </section>
 
-        <h3><a href="https://community.infiniteflight.com/t/a-complete-guide-to-aviation-photography-2022/464392">Guide to Aviation Photography</a></h3>
-        
-       <div class="footer">
-             <a href="https://www.capturelandscapes.com/beginners-guide-to-night-photography/" target="_blank">Night Photography Guide</a>
-             <a href="https://community.infiniteflight.com/t/a-complete-guide-to-aviation-photography-2022/464392" target="_blank">Aviation Photography Guide</a>
-             <p>2025 Night Wings – Ideas in motion, moments in memory.</p>
-       </div>
+    <div class="footer">
+      <a href="https://www.capturelandscapes.com/beginners-guide-to-night-photography/" target="_blank">Night Photography Guide</a>
+      <a href="https://community.infiniteflight.com/t/a-complete-guide-to-aviation-photography-2022/464392" target="_blank">Aviation Photography Guide</a>
+      <p>2025 Night Wings – Ideas in motion, moments in memory.</p>
+    </div>
 
- 
     <script src="index.js"></script>
-    </body>
+  </body>
 </html>

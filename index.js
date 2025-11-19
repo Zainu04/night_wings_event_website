@@ -1,134 +1,161 @@
-/*** Dark Mode ***
-  
-  Purpose:
-  - Use this starter code to add a dark mode feature to your website.
+/*** index.js — COMPLETE Week 9 Modal + RSVP Requirements ***/
 
-  When To Modify:
-  - [ ] Project 5 (REQUIRED FEATURE) 
-  - [ ] Any time after
-***/
-
-// Step 1: Select the theme button
- let themeButton = document.getElementById("theme-button");
-// Step 2: Write the callback function
+/*** Dark Mode ***/
+const themeButton = document.getElementById("theme-button");
 const toggleDarkMode = () => {
-    document.body.classList.toggle("dark-mode")
-    // This section will run whenever the button is clicked
-}
-// Step 3: Register a 'click' event listener for the theme button,
-//             and tell it to use toggleDarkMode as its callback function
-themeButton.addEventListener("click", toggleDarkMode);
+  document.body.classList.toggle("dark-mode");
+};
+if (themeButton) themeButton.addEventListener("click", toggleDarkMode);
 
-/*** Form Handling ******/
+/*** Scroll Navbar Background ***/
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar");
+  if (!navbar) return;
 
-
-window.addEventListener("scroll", function() {
-    const navbar = document.querySelector(".navbar");
-    if (window.scrollY > 250) {       // adjust 50 for when background should appear
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
-    }
+  if (window.scrollY > 250) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
 });
 
-
-// Step 1: Add your query for the submit RSVP button here
-
+/*** RSVP Form Handling ***/
 const rsvpButton = document.getElementById("rsvp-button");
-
 let count = 3; // initial participants
 
-const addParticipant = (event) => {
-    event.preventDefault();
+/*** addParticipant(person) ***/
+function addParticipant(person) {
+  const list = document.getElementById("participants-list");
+  if (!list) return;
 
-    const name = document.getElementById("name").value;
-    const state = document.getElementById("state").value;
+  const newParticipant = document.createElement("li");
 
-    const newParticipant = document.createElement("li");
-    newParticipant.textContent = `${name} from ${state} has RSVP'd.`;
+  // REQUIRED LINE (per instructions)
+  newParticipant.textContent = `🎟️ ${person.name} will be there!`;
 
-    const participantsList = document.getElementById("participants-list");
-    participantsList.appendChild(newParticipant);
+  list.appendChild(newParticipant);
 
-    newParticipant.textContent = `🎟️ ${name} from ${state} has RSVP'd.`;
-
-    // Increment count and update message
+  // Update counter text
+  const countMessage = document.getElementById("rsvp-count");
+  if (countMessage) {
     count += 1;
-    const countMessage = document.getElementById("rsvp-count");
     countMessage.textContent = `⭐ ${count} people have RSVP'd to this event!`;
+  }
 
-    document.getElementById("rsvp-form").reset();
+  // REQUIRED console log
+  console.log("Successfully added a new participant!");
+
+  // Reset form
+  const form = document.getElementById("rsvp-form");
+  if (form) form.reset();
 }
 
+/*** validateForm(event) ***/
+function validateForm(event) {
+  if (event && typeof event.preventDefault === "function") event.preventDefault();
 
-// Step 3: Add click event listener to the button
+  const name = (document.getElementById("name")?.value || "").trim();
+  const hometown = (document.getElementById("hometown")?.value || "").trim();
+  const state = (document.getElementById("state")?.value || "").trim();
+  const email = (document.getElementById("email")?.value || "").trim();
 
+  const person = { name, hometown, state, email };
 
+  let containsErrors = false;
+  if (person.name.length < 2) containsErrors = true;
+  if (person.hometown.length < 2) containsErrors = true;
+  if (!person.email.includes("@") || person.email.length < 5) containsErrors = true;
 
+  if (containsErrors) {
+    alert("Please fill in all fields correctly!");
+    return false;
+  }
 
+  addParticipant(person);
+  toggleModal(person);
 
+  return true;
+}
 
+// RSVP button event listener
+if (rsvpButton) {
+  rsvpButton.addEventListener("click", validateForm);
+}
 
+/*** Card Fade-in Animation ***/
+const cards = document.querySelectorAll(".highlight-card");
+if (cards.length) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    },
+    { threshold: 0.2 }
+  );
+  cards.forEach((card) => observer.observe(card));
+}
 
+/*** Modal Handling ***/
+let rotateFactor = 0;
+let intervalId = null;
 
+const modal = document.getElementById("success-modal");
+const modalText = document.getElementById("modal-text");
+const modalImage = document.getElementById("modal-image");
+const modalCloseBtn = document.getElementById("modal-close-btn");
 
+// animation toggle
+function animateImage() {
+  rotateFactor = rotateFactor === 0 ? -10 : 0;
+  if (modalImage) {
+    modalImage.style.transform = `rotate(${rotateFactor}deg)`;
+    modalImage.style.transition = "transform 0.3s ease";
+  }
+}
 
-const validateForm = (event) => {
-    event.preventDefault(); // prevent default form submission
-    
-    let containsErrors = false;
-    const rsvpInputs = document.getElementById("rsvp-form").elements;
+// MAIN modal function
+function toggleModal(person) {
+  if (!modal) return;
 
-    // Loop through all inputs
-    for (let i = 0; i < rsvpInputs.length; i++) {
-        const input = rsvpInputs[i];
+  modal.style.display = "flex"; // show modal
 
-        // Skip the button
-        if (input.type === "button" || input.type === "submit") continue;
+  // personalized text
+  if (modalText) {
+    modalText.textContent = `Thanks for RSVPing, ${person.name}! We can't wait to see you at the event!`;
+  }
 
-        // Check length
-        if (input.value.trim().length < 2) {
-            containsErrors = true;
-            input.classList.add("error");
-        } else {
-            input.classList.remove("error");
-        }
+  // reset image animation state
+  if (modalImage) {
+    modalImage.style.transform = "rotate(0deg)";
+    rotateFactor = 0;
+  }
+
+  // start animation interval
+  if (modalImage) {
+    if (intervalId !== null) clearInterval(intervalId);
+    intervalId = setInterval(animateImage, 500);
+  }
+
+  // hide after 5 seconds
+  setTimeout(() => {
+    if (modal) modal.style.display = "none";
+    if (intervalId !== null) {
+      clearInterval(intervalId);
+      intervalId = null;
     }
+    if (modalImage) modalImage.style.transform = "rotate(0deg)";
+  }, 5000);
+}
 
-    const emailInput = document.getElementById("email");
-    if (!emailInput.value.includes("@")) {
-        containsErrors = true;
-        emailInput.classList.add("error");
-    } else if (emailInput.value.length >= 2) {
-        // remove error if valid
-        emailInput.classList.remove("error");
+// Close button
+if (modalCloseBtn) {
+  modalCloseBtn.addEventListener("click", () => {
+    if (modal) modal.style.display = "none";
+    if (intervalId !== null) {
+      clearInterval(intervalId);
+      intervalId = null;
     }
-
-    // If no errors, add participant and clear inputs
-    if (!containsErrors) {
-        addParticipant(event);
-    }
-};
-
-
-rsvpButton.addEventListener("click", validateForm);
-
-// Animate cards when they come into view
-const cards = document.querySelectorAll('.highlight-card');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.2 });
-
-cards.forEach(card => observer.observe(card));
-
-
-
-
-/*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
-/*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
-
+    if (modalImage) modalImage.style.transform = "rotate(0deg)";
+  });
+}
