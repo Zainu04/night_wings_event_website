@@ -668,6 +668,103 @@ button:not(.header-button):hover {
 .dark-mode a:visited * {
   color: #c9a104;
 }
+
+/* DARK MODE FIXES FOR ALL SECTIONS */
+.dark-mode body,
+.dark-mode html {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+.dark-mode .about-section,
+.dark-mode .highlights,
+.dark-mode .schedule,
+.dark-mode #rsvp,
+.dark-mode .form-container,
+.dark-mode #links-section {
+  background-color: #0b143b; /* dark but not black */
+  color: #ffffff;
+}
+
+.dark-mode .about-text,
+.dark-mode .schedule-text,
+.dark-mode .schedule-cards p,
+.dark-mode .highlights p,
+.dark-mode .rsvp-para p,
+.dark-mode .rsvp-participants ol li {
+  color: #ffffff;
+}
+
+.dark-mode .highlight-card {
+  background-color: #26264d; /* darker card background */
+  color: #ffffff;
+  border: 1px solid #444; /* subtle border */
+}
+
+.dark-mode .highlight-card:hover {
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.4); /* gold-ish shadow on hover */
+}
+
+.dark-mode .header-button {
+  color: #ffffff;
+  border: 2px solid #ffcc00;
+}
+
+.dark-mode .header-button span {
+  background: #ffcc00;
+}
+
+.dark-mode .schedule-cards {
+  background-color: #26264d;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+.dark-mode .schedule-cards h3 {
+  color: #ffcc00;
+}
+
+.dark-mode .about-image img {
+  border: 2px solid #ffcc00;
+}
+
+.dark-mode .modal-container {
+  background-color: #2a2a4d; /* darker modal bg */
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+.dark-mode .links-container a {
+  background-color: #1a1a2e;
+  color: #ffcc00;
+}
+
+.dark-mode .links-container a:hover {
+  background-color: #ffcc00;
+  color: #0b143b;
+}
+
+.dark-mode .footer {
+  background-color: #1a1a2e;
+  color: #ffffff;
+}
+
+.dark-mode .footer a {
+  color: #ffcc00;
+}
+
+.dark-mode .footer a:hover {
+  color: orange;
+}
+
+.dark-mode hr.my-divider {
+  border-top: 1px solid #555;
+}
+
+.dark-mode #links {
+  color: #ffcc00; /* matches the dark mode theme */
+}
+
 :root {
   /* Light Mode */
   --bg-color: rgb(230, 230, 230);
