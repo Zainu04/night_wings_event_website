@@ -180,6 +180,14 @@ navLinks.forEach(link => {
   });
 });
 
+// Scroll to RSVP section
+const getTicketsButton = document.getElementById('get-tickets');
+getTicketsButton.addEventListener('click', () => {
+  document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });
+});
 
-
-
+// Scroll to Schedule section
+const viewScheduleButton = document.getElementById('view-schedule');
+viewScheduleButton.addEventListener('click', () => {
+  document.getElementById('schedule').scrollIntoView({ behavior: 'smooth' });
+});
