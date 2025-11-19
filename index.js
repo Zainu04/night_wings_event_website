@@ -138,5 +138,28 @@ if (modalCloseBtn) {
   });
 }
 
+/*** Smooth Scroll for Navbar Links with Fixed Offset ***/
+const navLinks = document.querySelectorAll(".navbar ul li a");
+
+navLinks.forEach(link => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault(); // prevent default jump
+
+    const targetId = this.getAttribute("href").substring(1); // remove #
+    const targetSection = document.getElementById(targetId);
+    if (!targetSection) return;
+
+    // calculate offset (navbar height)
+    const navbarHeight = document.querySelector(".navbar").offsetHeight;
+    const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth"
+    });
+  });
+});
+
+
 
 
