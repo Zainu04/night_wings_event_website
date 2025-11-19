@@ -16,6 +16,26 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// Ensure page always loads at top
+window.addEventListener('load', () => {
+    // Remove any hash from URL without refreshing
+    if (window.location.hash) {
+      history.replaceState(null, null, ' '); // clears #about
+    }
+    // Scroll to top
+    window.scrollTo(0, 0);
+  });
+  
+  // Smooth scroll for Home link
+  const homeLink = document.querySelector('a[href="#home"]');
+  if (homeLink) {
+    homeLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+  
+  
 /*** RSVP Form Handling ***/
 const rsvpButton = document.getElementById("rsvp-button");
 let count = 3; // initial participants

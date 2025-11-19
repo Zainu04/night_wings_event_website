@@ -6,6 +6,7 @@ When To Modify:
 ***/
 html {
   background-color: var(--bg-color);
+  scroll-behavior: smooth;
   scroll-padding-top: 70px;
 }
 body {
